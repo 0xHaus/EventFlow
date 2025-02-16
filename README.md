@@ -9,17 +9,17 @@ It includes:
 ## Project Structure
 
 eventflow/ 
-├── contracts/ │ 
-└── EventFlowNFT.sol // Your Solidity contract(s) 
+├── contracts/
+│ └── EventFlowNFT.sol // Your Solidity contract(s) 
 ├── subgraph/ 
 │ ├── schema.graphql // Subgraph schema
 │ ├── subgraph.yaml // Subgraph config 
 │ └── src/ 
 │ └── mapping.ts // Event handlers for The Graph 
 ├── frontend/
- │ ├── pages/ // Next.js pages
- │ ├── components/ // Reusable UI components
- │ └── package.json // Front-end dependencies 
+│ ├── pages/ // Next.js pages
+│ ├── components/ // Reusable UI components
+│ └── package.json // Front-end dependencies 
 └── README.md
 
 
