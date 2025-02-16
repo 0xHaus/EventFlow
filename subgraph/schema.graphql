@@ -1,0 +1,14 @@
+# schema.graphql - Defines your subgraph entities
+
+type NFT @entity {
+  id: ID!
+  owner: Bytes!
+}
+
+type Listing @entity {
+  id: ID!
+  tokenId: BigInt!
+  price: BigInt!
+  seller: Bytes!
+  active: Boolean!
+}

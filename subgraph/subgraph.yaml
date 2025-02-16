@@ -1,0 +1,30 @@
+# subgraph.yaml - Subgraph configuration
+
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: EventFlowNFT
+    network: MAINNET_OR_TESTNET
+    source:
+      address: "YOUR_CONTRACT_ADDRESS"
+      abi: EventFlowNFT
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - NFT
+        - Listing
+      abis:
+        - name: EventFlowNFT
+          file: ./abis/EventFlowNFT.json
+      eventHandlers:
+        - event: Minted(indexed address,indexed uint256)
+          handler: handleMinted
+        - event: Listed(indexed address,indexed uint256,uint256)
+          handler: handleListed
+        - event: Purchased(indexed address,indexed uint256,uint256)
+          handler: handlePurchased
+      file: ./src/mapping.ts
